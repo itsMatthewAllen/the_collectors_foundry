@@ -1,26 +1,112 @@
 @import "tailwindcss";
 
+/* ==========================================
+ * Global Styles for THE COLLECTOR'S FOUNDRY
+ * ============================ */
+
+/* Light theme (default) */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+
+  --background: #f4f1eb;
+  --foreground: #25282a;
+
+  --surface: #ffffff;
+  --surface-secondary: #eae5dc;
+
+  --border: #ded8ce;
+
+  --muted: #eeeae3;
+  --muted-foreground: #696b6c;
+
+  --accent: #a65f35;
+  --accent-hover: #8e4e2c;
+  --accent-foreground: #ffffff;
+
+  --metallic: #bd895c;
+
+  --focus-ring: #bd895c;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Dark theme */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --background: #202326;
+  --foreground: #f4eee5;
+
+  --surface: #2a2e32;
+  --surface-secondary: #303438;
+
+  --border: #41464a;
+
+  --muted: #34383b;
+  --muted-foreground: #b5ada3;
+
+  --accent: #b87345;
+  --accent-hover: #d08a58;
+  --accent-foreground: #17191b;
+
+  --metallic: #d39a58;
+
+  --focus-ring: #d39a65;
 }
 
+/* Follow system pref. unless overridden */
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+
+    --background: #202326;
+    --foreground: #f4eee5;
+
+    --surface: #2a2e32;
+    --surface-secondary: #303438;
+
+    --border: #41464a;
+
+    --muted: #34383b;
+    --muted-foreground: #b5ada3;
+
+    --accent: #b87345;
+    --accent-hover: #d08a58;
+    --accent-foreground: #17191b;
+
+    --metallic: #d39a58;
+
+    --focus-ring: #d39a65;
   }
 }
 
+/* Expose tokens to tailwind */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-surface: var(--surface);
+  --color-surface-secondary: var(--surface-secondary);
+
+  --color-border: var(--border);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-metallic: var(--metallic);
+
+  --color-focus-ring: var(--focus-ring);
+}
+
+html {
+  min-height: 100%;
+}
+
 body {
+  min-height: 100%;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }

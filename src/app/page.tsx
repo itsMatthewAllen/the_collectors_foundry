@@ -1,69 +1,143 @@
+import Link from "next/link";
 import Image from "next/image";
+
+const features = [
+  {
+    number: "01",
+    title: "Useful Tools",
+    description:
+      "Practical calculators and utilities designed to make collecting easier.",
+  },
+  {
+    number: "02",
+    title: "Organize Your Collection",
+    description:
+      "Bring structure to your collecting goals and keep track of what matters.",
+  },
+  {
+    number: "03",
+    title: "Build Your Collection",
+    description:
+      "Plan your next collecting goals and work toward completing the collections you dream about.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <>
+      {/* Hero */}
+      <section className="relative overflow-hidden border-b border-border bg-surface">
+        <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32">
+          <div className="max-w-3xl space-y-8">
+            <div className="flex items-center gap-3">
+              <span className="h-px w-10 bg-accent" />
+              <span className="text-sm font-semibold tracking-[0.2em] text-accent">
+                TOOLS FOR COLLECTORS
+              </span>
+            </div>
+
+            <h1 className="text-5xl font-bold tracking-tight sm-text-6xl lg:text-7xl">
+              Forge Your{" "}
+              <span className="text-accent">Collection.</span>
+            </h1>
+
+            <p className="max-w-2xl text-lg leading-8 text-muted-foreground sm:text-xl">
+              Whether you're chasing a childhood favorite or building a
+              collection from the ground up, the Foundry provides tools and
+              resources to help bring your collection ambitions to life.
+            </p>
+
+            <div className="flex flex-wrap gap-4">
+              <Link
+                href="/tools"
+                className="inline-flex items-center justify-center rounded-lg bg-accent px-6 py-3 font-semibold text-accent-foreground transition-colors hover:bg-accent-hover"
+              >
+                Explore the Toolbox
+                <span aria-hidden="true" className="ml-2">
+                  &rarr;
+                </span>
+              </Link>
+
+              <Link
+                href="/about"
+                className="inline-flex items-center justify-center rounded-lg border border-border px-6 py-3 font-semibold transition-colors hover:border-accent hover:text-accent"
+              >
+                Discover the Foundry
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full border border-accent/10"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full border border-accent/10"
+        />
+      </section>
+
+      {/* Features */}
+      <section id="toolbox" className="mx-auto max-w-7xl px-6 py-20 sm:py-24">
+        <div className="mb-12 max-w-2xl space-y-3">
+          <p className="text-sm font-semibold tracking-[0.2em] text-accent">
+            THE FOUNDRY TOOLBOX
+          </p>
+
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            Built for collectors.
+          </h2>
+
+          <p className="text-muted-foreground leading-7">
+            Collecting should be about enjoying the things you love.  We're
+            building practical tools to make the experience a little easier.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="grid gap-6 md:grid-cols-3">
+          {features.map((feature) => (
+            <article
+              key={feature.number}
+              className="rounded-xl border border-border bg-surface p-7 transition-colors hover:border-accent/50"
+            >
+              <span className="text-sm font-semibold tracking-widest text-metallic">
+                {feature.number}
+              </span>
+
+              <h3 className="mt-5 text-xl font-semibold">
+                {feature.title}
+              </h3>
+              
+              <p className="mt-3 leading-7 text-muted-foreground">
+                {feature.description}
+              </p>
+            </article>
+          ))}
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Philosophy */}
+      <section className="border-y border-border bg-surface-secondary">
+        <div className="mx-auto max-w-7xl px-6 py-20">
+          <div className="max-w-3xl space-y-5">
+            <p className="text-sm font-semibold tracking-[0.2em] text-accent">
+              COLLECT WHAT YOU LOVE
+            </p>
+
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+              It's your collection.  Build it your way.
+            </h2>
+
+            <p className="text-lg leading-8 text-muted-foreground">
+              You don't need the most expensive cards, the rarest finds, or
+              someone else's definition of a complete collection.  The Foundry
+              is here to help you define what matters to you and enjoy the
+              process of getting there on your own terms.
+            </p>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
