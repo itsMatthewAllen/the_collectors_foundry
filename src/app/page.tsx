@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 
 const features = [
   {
@@ -37,8 +36,7 @@ export default function Home() {
             </div>
 
             <h1 className="text-5xl font-bold tracking-tight sm-text-6xl lg:text-7xl">
-              Forge Your{" "}
-              <span className="text-accent">Collection.</span>
+              Forge Your <span className="text-accent">Collection.</span>
             </h1>
 
             <p className="max-w-2xl text-lg leading-8 text-muted-foreground sm:text-xl">
@@ -90,7 +88,7 @@ export default function Home() {
           </h2>
 
           <p className="text-muted-foreground leading-7">
-            Collecting should be about enjoying the things you love.  We're
+            Collecting should be about enjoying the things you love. We're
             building practical tools to make the experience a little easier.
           </p>
         </div>
@@ -105,10 +103,8 @@ export default function Home() {
                 {feature.number}
               </span>
 
-              <h3 className="mt-5 text-xl font-semibold">
-                {feature.title}
-              </h3>
-              
+              <h3 className="mt-5 text-xl font-semibold">{feature.title}</h3>
+
               <p className="mt-3 leading-7 text-muted-foreground">
                 {feature.description}
               </p>
@@ -126,14 +122,14 @@ export default function Home() {
             </p>
 
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              It's your collection.  Build it your way.
+              It's your collection. Build it your way.
             </h2>
 
             <p className="text-lg leading-8 text-muted-foreground">
               You don't need the most expensive cards, the rarest finds, or
-              someone else's definition of a complete collection.  The Foundry
-              is here to help you define what matters to you and enjoy the
-              process of getting there on your own terms.
+              someone else's definition of a complete collection. The Foundry is
+              here to help you define what matters to you and enjoy the process
+              of getting there on your own terms.
             </p>
           </div>
         </div>
